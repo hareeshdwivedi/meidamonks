@@ -1,0 +1,319 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    outline: none;
+    cursor: pointer;
+}
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width: 100vw;
+    height: 100vh;
+}
+
+.container::-webkit-scrollbar {
+    display: none;
+  }
+
+@font-face {
+    font-family: "klavika-bold";
+    src: url("./assets/font/klavika-bold-webfont.woff") format('woff');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "klavika-lighter";
+    src: url("./assets/font/klavika-light-webfont.woff") format('woff');
+    font-weight: lighter;
+}
+
+@font-face {
+    font-family: "klavika-medium";
+    src: url("./assets/font/klavika-medium-webfont.woff") format('woff');
+    font-weight: medium;
+}
+
+@font-face {
+    font-family: "klavika-normal";
+    src: url("./assets/font/klavika-regular-webfont.woff") format('woff');
+    font-weight: normal;
+}
+
+.loading {
+    width: 40vw;
+    height: 40vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    animation: appear 1s linear 1s 1 normal;
+    animation-fill-mode: forwards;
+    transform: scale(0,0);
+    color: white;
+    font-family: klavika-lighter;
+    font-style: italic;
+}
+
+@keyframes appear {
+    from {transform: scale(0,0);}
+    to {transform: scale(1,1);}
+}
+
+.path {
+    display: none;
+    background-image: url("./assets/images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 760vw;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+.path::-webkit-scrollbar {
+    display: none;
+  }
+
+.holder {
+    position: fixed;
+    z-index: 2;
+    background-color: transparent;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+}
+
+.top {
+    z-index: 3;
+    height: 80vh;
+    width: 100vw;
+    display: block;
+}
+
+.top .prev, .top .next {
+    font-size: 6vh;
+    color: white;
+    position: fixed;
+    top: 40vh;
+    opacity: .8;
+    cursor: pointer;
+}
+
+.top .prev {
+    left: 2vw;
+}
+
+.top .next {
+    right: 2vw;
+}
+
+.slide {
+    position: fixed;
+    left: 7.5vw;
+    bottom: 20vh;
+    width: 85vw;
+    height: 80vh;
+}
+
+.bottom {
+  display: block;
+  z-index: 3;
+  height: 20vh;
+  width: 100vw;
+}
+
+.bottom img {
+    height: 10vh;
+    width: auto;
+    background-color: white;
+    opacity: .8;
+    position: fixed;
+    right: 1vw;
+    bottom: 1vh;
+}
+
+.bottom .beginning {
+    font-family: "klavika-lighter";
+    position: fixed;
+    color: white;
+    font-size: 1.2vh;
+    height: 7vh;
+    width: 25vw;
+    left: 2vw;
+    bottom: 8vh;
+}
+
+.bottom .button-holder {
+    position: fixed;
+    height: 2vh;
+    width: 15vw;
+    bottom: 3vh;
+    left: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom .button-holder .btn {
+    font-family: "klavika-lighter";
+    width: 1.5vw;
+    height: 2vh;
+    text-decoration: none;
+    border: 1px dotted white;
+    background-color: transparent;
+    color: white;
+}
+
+.phrase {
+    font-family: "klavika-lighter";
+    color: white;
+    font-size: 6vh;
+    text-decoration: underline;
+    position: fixed;
+}
+
+#phrase0 {
+    top: 2vh;
+}
+
+#phrase1 {
+    top: 35vh;
+}
+
+#phrase2 {
+    top: 40vh;
+}
+
+#phrase3 {
+    text-align: end;
+    right: 7vw;
+    top: 39vh;
+}
+
+#phrase4 {
+    text-align: end;
+    right: 7vw;
+    top: 39vh;
+}
+
+#phrase5 {
+    text-align: end;
+    right: 7vw;
+    top: 35vh;
+}
+
+#phrase6 {
+    top: 40vh;
+}
+
+#phrase7 {
+    top: 40vh;
+}
+
+#phrase8 {
+    top: 40vh;
+}
+
+#phrase9 {
+    text-align: end;
+    right: 7vw;
+    top: 2vh;
+}
+
+.openings {
+    font-family: "klavika-lighter";
+    position: fixed;
+    color: white;
+    font-size: 1.2vh;
+    height: 7vh;
+    width: 25vw;
+    right: 7vw;
+    text-align: end;
+    top: 45vh;
+}
+
+.openings a {
+    color: white;
+}
+
+.bottom .step  {
+    font-family: "klavika-lighter";
+    position: fixed;
+    color: white;
+    font-size: 1.2vh;
+    height: 2vh;
+    width: 25vw;
+    left: 20vw;
+    bottom: 2.5vh;
+}
+
+@media screen and (max-width: 425px) {
+    .loading {
+        width: 60vw;
+    }
+
+    .bottom .beginning {
+        font-size: 1.5vh;
+        height: 10vh;
+        width: 40vw;
+        left: 2vw;
+        bottom: 12vh;
+    }
+
+    .bottom .button-holder {
+        height: 4vh;
+        width: 80vw;
+        bottom: 3vh;
+        left: 2vw;
+    }
+    
+    .bottom .button-holder .btn {
+        width: 8vw;
+        height: 4vh;
+    }
+
+    .bottom img {
+        height: 4vh;
+        right: 2vw;
+        bottom: 3vh;
+    }
+
+    .phrase {
+        font-size: 4vh;
+    }
+
+    .bottom .step {
+        font-size: 1.5vh;
+        width: 80vw;
+        left: 4vw;
+        bottom: 10vh;
+    }
+
+    .openings {
+        font-size: 1.5vh;
+        width: 50vw;
+    }
+    
+    #phrase1, #phrase2, #phrase6, #phrase7, #phrase8 {
+        left: 10vw;
+    }
+
+    #phrase3, #phrase4, #phrase5 {
+        right: 10vw;
+    }
+}
